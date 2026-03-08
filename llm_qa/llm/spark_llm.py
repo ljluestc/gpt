@@ -42,8 +42,10 @@ class SparkLLM(LLMBase):
     # max_token
     max_tokens : int = 4096
 
-    def getText(self, role, content, text = []):
+    def getText(self, role, content, text = None):
         # role 是指定角色，content 是 prompt 内容
+        if text is None:
+            text = []
         jsoncon = {}
         jsoncon["role"] = role
         jsoncon["content"] = content

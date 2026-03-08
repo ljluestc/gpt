@@ -177,7 +177,7 @@ class ZhipuAILLM(LLMBase):
 
         response = await self.client.async_invoke(**params)
 
-        return response_payload
+        return response["data"]["choices"][-1]["content"].strip('"').strip(" ")
 
     def _stream(
         self,

@@ -173,16 +173,13 @@ class QAChainWithHistory():
 
  
     def answer(self, question:str=None, temperature = None, top_k = 4):
-        """" 核心方法，调用问答链
+        """ 核心方法，调用问答链
         arguments: 
         - question: 用户提问
         """
         
         if len(question) == 0:
             return "", self.chat_history
-        
-        if len(question) == 0:
-            return ""
         
         if temperature == None:
             temperature = self.temperature

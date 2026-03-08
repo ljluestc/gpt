@@ -79,7 +79,7 @@ def create_db(files=DEFAULT_DB_PATH, persist_directory=DEFAULT_PERSIST_PATH, emb
         chunk_size = 500,   # 每个文档的字符数量限制
         chunk_overlap = 150 # 两份文档重叠区域的长度
     )
-    split_docs = text_splitter.split_documents(docs[:10])
+    split_docs = text_splitter.split_documents(docs)
 
     # 定义持久化路径
     if type(embeddings) == str:
